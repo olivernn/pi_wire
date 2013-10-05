@@ -1,4 +1,4 @@
-#include <pi_wire_pin.h>
+#include <pi_wire_output_pin.h>
 
 static int pin_number(VALUE self) {
   VALUE pin_number = rb_ivar_get(self, rb_intern("@number"));
@@ -20,12 +20,12 @@ static VALUE write(VALUE self, VALUE rb_int) {
   return Qtrue;
 }
 
-void Init_pi_wire_pin() {
-  VALUE cPiWirePin = rb_define_class_under(mPiWire, "Pin", rb_cObject);
+void Init_pi_wire_output_pin() {
+  VALUE cPiWireOutputPin = rb_define_class_under(mPiWire, "OutputPin", rb_cObject);
 
-  rb_define_method(cPiWirePin, "read", read, 0);
-  rb_define_method(cPiWirePin, "write", write, 1);
-  rb_define_alias(cPiWirePin, "<<", "write");
+  rb_define_method(cPiWireOutputPin, "read", read, 0);
+  rb_define_method(cPiWireOutputPin, "write", write, 1);
+  rb_define_alias(cPiWireOutputPin, "<<", "write");
 
-  rb_define_private_method(cPiWirePin, "mode=", set_mode, 1);
+  rb_define_private_method(cPiWireOutputPin, "mode=", set_mode, 1);
 }

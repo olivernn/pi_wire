@@ -22,5 +22,5 @@ void Init_pi_wire() {
   rb_define_const(mPiWire, "LOW", INT2FIX(LOW));
   rb_define_const(mPiWire, "HIGH", INT2FIX(HIGH));
 
-  Init_pi_wire_pin();
+  Init_pi_wire_output_pin();
 }
