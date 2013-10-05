@@ -8,6 +8,6 @@ extern VALUE mPiWire;
 
 void Init_pi_wire();
 
-#include <pi_wire_output_pin.h>
+#include <pi_wire_pin.h>
 
 #endif
