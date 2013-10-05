@@ -1,7 +1,5 @@
 module PiWire
-  class OutputPin
-    attr_reader :number
-
+  class OutputPin < Pin
     def initialize(number)
       @number = number
       self.mode = PiWire::OUTPUT_MODE
