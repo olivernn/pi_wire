@@ -5,5 +5,6 @@ describe PiWire do
 
   describe "constants" do
     it { PiWire::OUTPUT_MODE.should == 1 }
+    it { PiWire::PWM_MODE.should == 2 }
   end
 end

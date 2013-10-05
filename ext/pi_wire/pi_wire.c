@@ -17,6 +17,7 @@ void Init_pi_wire() {
   rb_define_module_function(mPiWire, "init", init_wiring_pi, 0);
 
   rb_define_const(mPiWire, "OUTPUT_MODE", INT2FIX(OUTPUT));
+  rb_define_const(mPiWire, "PWM_MODE", INT2FIX(PWM_OUTPUT));
 
   rb_define_const(mPiWire, "LOW", INT2FIX(LOW));
   rb_define_const(mPiWire, "HIGH", INT2FIX(HIGH));
