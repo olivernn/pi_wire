@@ -25,4 +25,5 @@ void Init_pi_wire() {
   Init_pi_wire_pin();
   Init_pi_wire_output_pin();
   Init_pi_wire_pwm_pin();
+  Init_pi_wire_serial();
 }
