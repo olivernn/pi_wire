@@ -1,8 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-require 'pi_wire'
-
-# needed to setup the RaspberryPi GPIO hardware.
-PiWire.init
+require 'pi_wire/init'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
