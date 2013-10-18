@@ -26,13 +26,13 @@ As with wiringPi you must initialize PiWire before you start using it.
 
 If you don't do this then at best things wont work, and at worst your program will crash.
 
+You can have PiWire auto initialized by requing `pi_wire/init` instead.
+
 ### LED Blink
 
 This is effectively the hello world program of electronics:
 
-    require 'pi_wire'
-
-    PiWire.init
+    require 'pi_wire/init'
 
     pin = PiWire::OutputPin.new(1)
 
