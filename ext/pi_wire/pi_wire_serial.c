@@ -32,6 +32,7 @@ static VALUE serial_write(VALUE self, VALUE str) {
   int fd = get_fd(self);
   char *s = StringValueCStr(str);
   serialPuts(fd, s);
+  tcdrain(fd);
   return Qtrue;
 }
 
@@ -39,7 +40,7 @@ static VALUE serial_read(VALUE self) {
   int fd = get_fd(self);
   int chars_available = serialDataAvail(fd);
   int i;
-  char *str = malloc(chars_available + 2);
+  char *str = malloc(chars_available + 1);
 
   if (chars_available == -1) {
     rb_raise(rb_eRuntimeError, "No data to read");
